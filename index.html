@@ -68,7 +68,7 @@ nav{
 }
 .navin{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-.brand img{width:56px;height:56px;object-fit:contain}
+.brand img{width:68px;height:68px;object-fit:contain;filter:drop-shadow(0 0 1px rgba(255,255,255,.85)) drop-shadow(0 0 12px rgba(255,140,35,.24))}
 .brand span{font-weight:900;letter-spacing:1.8px;font-size:15px}
 .navlinks{display:flex;align-items:center;gap:4px}
 .navlinks a{
@@ -80,7 +80,7 @@ nav{
 .menu-btn{display:none;background:none;border:1px solid var(--line);color:#fff;border-radius:12px;padding:9px 12px;font-size:20px}
 
 /* HERO */
-.hero{position:relative;min-height:640px;display:grid;align-items:center;text-align:center;padding:70px 0 62px;overflow:hidden}
+.hero{position:relative;min-height:680px;display:grid;align-items:center;text-align:center;padding:70px 0 62px;overflow:hidden}
 .hero:before{
   content:"";position:absolute;width:620px;height:620px;border-radius:50%;
   left:50%;top:45%;transform:translate(-50%,-50%);
@@ -88,8 +88,8 @@ nav{
   box-shadow:0 0 0 70px rgba(255,122,0,.018),0 0 0 140px rgba(255,122,0,.012);
   pointer-events:none;
 }
-.hero-inner{max-width:920px;position:relative}
-.hero-logo{width:min(250px,58vw);height:auto;display:block;margin:0 auto 18px;filter:drop-shadow(0 18px 40px rgba(255,102,0,.18))}
+.hero-inner{max-width:920px;position:relative}.hero-logo-wrap{position:relative;width:max-content;max-width:100%;margin:0 auto 18px}.hero-logo-wrap:before{content:"";position:absolute;inset:13% 10%;border-radius:50%;background:radial-gradient(circle,rgba(255,176,45,.24) 0%,rgba(255,104,24,.12) 40%,transparent 72%);filter:blur(20px);z-index:0}.hero-logo{position:relative;z-index:1}
+.hero-logo{width:min(315px,68vw);height:auto;display:block;filter:drop-shadow(0 0 1px rgba(255,255,255,.98)) drop-shadow(1px 0 0 rgba(255,255,255,.92)) drop-shadow(-1px 0 0 rgba(255,255,255,.92)) drop-shadow(0 1px 0 rgba(255,255,255,.92)) drop-shadow(0 -1px 0 rgba(255,255,255,.92)) drop-shadow(0 18px 42px rgba(255,102,0,.28))}
 .eyebrow{
   display:inline-flex;align-items:center;gap:8px;
   padding:8px 13px;border:1px solid rgba(255,198,43,.32);
@@ -101,7 +101,7 @@ nav{
   background:linear-gradient(90deg,#fff 5%,#ffe08a 38%,#ff8a42 72%,#fff 100%);
   -webkit-background-clip:text;background-clip:text;color:transparent;
 }
-.hero p{max-width:760px;margin:0 auto;color:#c1bdb9;font-size:clamp(17px,2.1vw,21px);line-height:1.6}
+.hero p{max-width:760px;margin:0 auto;color:#c1bdb9;font-size:clamp(17px,2.1vw,21px);line-height:1.6}.hero-commercial{margin:12px auto 0;color:#ffd06a;font-size:14px;font-weight:750;letter-spacing:.1px;max-width:700px}
 .actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:28px}
 .btn{
   min-height:50px;padding:0 22px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;
@@ -157,8 +157,8 @@ section{padding:88px 0}
 /* PORTFOLIO */
 .portfolio-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
 .card{border-radius:24px;padding:18px;overflow:hidden;transition:.25s}
-.card:hover{transform:translateY(-4px);border-color:rgba(255,166,55,.25)}
-.card-media{aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:#050505;border:1px solid rgba(255,255,255,.08)}
+.card{position:relative}.card:hover{transform:translateY(-5px);border-color:rgba(255,166,55,.38);box-shadow:0 28px 80px rgba(0,0,0,.34),0 0 0 1px rgba(255,145,45,.06)}
+.card-media{aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:#050505;border:1px solid rgba(255,255,255,.08);position:relative}.card-media:after{content:"Ver proyecto ↗";position:absolute;right:12px;bottom:12px;padding:7px 10px;border-radius:999px;background:rgba(0,0,0,.72);border:1px solid rgba(255,255,255,.14);color:#fff;font-size:11px;font-weight:800;letter-spacing:.2px;opacity:0;transform:translateY(5px);transition:.25s;pointer-events:none}.card:hover .card-media:after{opacity:1;transform:translateY(0)}
 .card-media iframe{width:100%;height:100%;border:0}
 .tag{display:inline-block;margin:15px 4px 0;padding:6px 10px;border-radius:999px;background:rgba(255,122,0,.09);color:#ffc45b;font-size:10px;font-weight:900;letter-spacing:1px}
 .card h3{font-size:23px;margin:12px 4px 7px}
@@ -203,7 +203,7 @@ footer{padding:36px 0 110px;text-align:center;color:#777;font-size:13px}
   display:grid;place-items:center;background:var(--green);color:#06150b;text-decoration:none;
   box-shadow:0 12px 38px rgba(0,0,0,.5),0 0 0 5px rgba(37,211,102,.09);transition:.22s;
 }
-.whatsapp:hover{transform:translateY(-3px) scale(1.04)}
+.whatsapp:hover{transform:translateY(-3px) scale(1.04)}.whatsapp:after{content:"";position:absolute;inset:-4px;border-radius:50%;border:1px solid rgba(37,211,102,.32);animation:waPulse 2.6s ease-out infinite;pointer-events:none}@keyframes waPulse{0%{transform:scale(.92);opacity:.55}70%,100%{transform:scale(1.18);opacity:0}}
 .whatsapp svg{width:29px;height:29px;fill:currentColor}
 
 /* MOBILE */
@@ -221,7 +221,7 @@ footer{padding:36px 0 110px;text-align:center;color:#777;font-size:13px}
   .about-grid,.split-grid{grid-template-columns:1fr}
   .services{grid-template-columns:1fr}
   .portfolio-grid{grid-template-columns:1fr}
-  .hero{min-height:600px;padding-top:48px}
+  .hero{min-height:620px;padding-top:40px}
   .hero h1{letter-spacing:-2px}
   section{padding:68px 0}
   .video-copy{display:block}
@@ -229,7 +229,7 @@ footer{padding:36px 0 110px;text-align:center;color:#777;font-size:13px}
 }
 @media(max-width:520px){
   .container{width:min(var(--max),calc(100% - 28px))}
-  .hero-logo{width:min(210px,60vw)}
+  .hero-logo{width:min(245px,64vw)}.hero-logo-wrap{margin-bottom:14px}.hero-commercial{font-size:13px;margin-top:12px;padding:0 10px}.brand img{width:56px;height:56px}
   .hero h1{font-size:43px}
   .hero p{font-size:16px}
   .trust-row{gap:7px}
@@ -245,7 +245,7 @@ footer{padding:36px 0 110px;text-align:center;color:#777;font-size:13px}
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   body:before{animation:none}
-  .btn,.card,.whatsapp{transition:none}
+  .btn,.card,.whatsapp{transition:none}.whatsapp:after{animation:none}
 }
 </style>
 </head>
@@ -273,10 +273,10 @@ footer{padding:36px 0 110px;text-align:center;color:#777;font-size:13px}
 
 <header class="hero" id="inicio">
   <div class="container hero-inner">
-    <img class="hero-logo" src="logo.png" alt="MHCREATIVES">
+    <div class="hero-logo-wrap"><img class="hero-logo" src="logo.png" alt="MHCREATIVES"></div>
     <span class="eyebrow">Producción · Marketing · Publicidad</span>
     <h1>Ideas que se convierten en impacto.</h1>
-    <p>Contenido audiovisual pensado para que tu marca se vea, se recuerde y conecte con su audiencia.</p>
+    <p>Contenido audiovisual pensado para que tu marca se vea, se recuerde y conecte con su audiencia.</p><div class="hero-commercial">Creamos contenido que hace que las marcas se vean imposibles de ignorar.</div>
 
     <div class="actions">
       <a class="btn btn-primary" href="#portafolio">Ver nuestro trabajo</a>
